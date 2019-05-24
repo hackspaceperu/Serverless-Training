@@ -1,8 +1,8 @@
 # Entrenamiento de Serverless
 
-En este repositorio podrás encontrar a partir del **lunes 27 de junio a las 7 pm** todo el material referido al entrenamiento de Backend Serverless que está siendo organizado por Hack Space Perú y dirigido por Luis Suarez.
+En este repositorio podrás encontrar a partir del **lunes 27 de mayo a las 7 pm** todo el material referido al entrenamiento de Backend Serverless que está siendo organizado por Hack Space Perú y dirigido por Luis Suarez.
 
-- Inicio: Lunes 27 de junio 7:30 pm
+- Inicio: Lunes 27 de mayo 7:30 pm
 
 - Horario: Lunes de 7:30 pm a 10:00 pm, martes y jueves de 9 pm a 11 pm.
 
