@@ -6,4 +6,4 @@ En el siguiente repositorio podrás encontrar a partir del **lunes 27 de junio a
 
 - Horario: Lunes de 7:30 pm a 10:00 pm, martes y jueves de 9 pm a 11 pm.
 
-Si es que el lunes 27 al medio día no recibes en tu correo el link de Zoom para ingresar al entrenamiento, escribe al correo contacto@hackspace.pe
+Si es que el lunes 27 al medio día no recibes en tu correo el link de Zoom para acceder al entrenamiento virtual, escribe al correo contacto@hackspace.pe para resolverlo.
