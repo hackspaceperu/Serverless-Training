@@ -11,4 +11,4 @@ Si es que el lunes 27 al medio día no recibes en tu correo el link de Zoom para
 Ten en cuenta que aquellos participantes que entreguen, dentro de la fecha, los retos que se dejarán semanalmente, podrán acceder a las sesiones presenciales de **los lunes** según la capacidad del espacio.
 
 El calendario de las sesiones es el siguiente:
-![Calendario Backend](hackspaceperu.github.com/Serverless-Training/img/Calendario-Backend.png)
+![Calendario Backend](hackspaceperu.github.io/Serverless-Training/img/Calendario-Backend.png)
