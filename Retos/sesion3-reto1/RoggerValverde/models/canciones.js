@@ -3,5 +3,7 @@ class CancionModel {
 		this.db = db;
 		this.asientoModel = this.db.Asientos;
 		return this;
-	}
+  }
+  
+
 }
