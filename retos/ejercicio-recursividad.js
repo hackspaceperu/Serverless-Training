@@ -15,8 +15,6 @@ const app = () => console.log(
     sumPairsEquals(8, numeros)
 );
 
-app();
-
 function sumPairsEquals(total, numbers)
 {
     const maxLenghtAllowed = 2;
@@ -47,3 +45,6 @@ function accumulator()
 
     return accumulator.add;
 }
+
+//Run application
+return app();
