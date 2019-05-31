@@ -3,7 +3,7 @@ const map = (arr,fn)=>reduce(arr,(acc,curr)=>acc.concat(fn(curr,arr)),[])
 const filter = (arr,fn)=>reduce(arr,(acc,curr)=>fn(curr)? acc.concat(curr) :acc,[])
 const print = console.log
 /**
- * 
+ * @author Thom Maurick Roman Aguilar - thomtwd@gmail.com
  * @param {arr} es el array para buscar
  * @param {value} es el element que será el que comprueba
  * @return La función retornará un array de array
@@ -30,5 +30,4 @@ const filtered = (arr,value)=>{
 print(filtered([2,8,6,0,9,-10,-1,6],8))
 print(filtered([2,5,1,7,8,-8,1],3))
 print(filtered([1,2,3,2,7,8,-3],4))
-// filtered([1,2,4,2,7,8,-3],4)
 print(filtered([1,2,4,2,7,8,-3],4))
