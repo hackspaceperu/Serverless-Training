@@ -21,5 +21,5 @@ const filtered = (arr,value)=>{
     }
     return recursive(arr)
 }
-print(filtered([2,6,8,0,9,-10,-1],8))
-print(filtered([2,5,1,7,8,-8,1],3))
+print(filtered([2,8,6,0,9,-10,-1,6],8))
+print(filtered([2,5,1,7,8,-8],3))
