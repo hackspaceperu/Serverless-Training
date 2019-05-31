@@ -13,12 +13,15 @@ const print = console.log
 const filtered = (arr,value)=>{
     let acc = []
     const recursive = arr=>{
+        let flag = false
         let result = [filter(arr,item=>item+arr[0]===value)[0]]
-        if(result[0]!==undefined) {
+        if(result[0]===arr[0]) flag = true
+        if(result[0]!==undefined && result.length>0) {
             acc.push([arr[0],result[0]])
+            if(flag) arr.shift()
             arr.splice(arr.indexOf(result[0]),1)
         }
-        arr.shift()
+        if(!flag)arr.shift()
         if(arr.length>0) recursive(arr)
         return acc
     }
@@ -26,3 +29,6 @@ const filtered = (arr,value)=>{
 }
 print(filtered([2,8,6,0,9,-10,-1,6],8))
 print(filtered([2,5,1,7,8,-8,1],3))
+print(filtered([1,2,3,2,7,8,-3],4))
+// filtered([1,2,4,2,7,8,-3],4)
+print(filtered([1,2,4,2,7,8,-3],4))
