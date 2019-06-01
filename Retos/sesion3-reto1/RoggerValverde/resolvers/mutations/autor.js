@@ -2,10 +2,10 @@ const models = require('../../models')
 
 const addAutor={
   command: 'addAutor',
-  desc: 'Add a new autor',
+  desc: 'Agrega un nuevo autor',
   builder: {
     nombres: {
-      describe: 'Nombre del autor',
+      describe: 'Nombres del autor',
       demandOption: true,
       type: 'string'
     },
@@ -14,13 +14,17 @@ const addAutor={
       demandOption: true,
       type: 'string'
     },
-    nacionalidad: {
+    correo: {
       describe: 'Nacionalidad del autor',
+      demandOption: true,
       type: 'string'
     }
   },
   handler(argv) {
-    const autor = models.autorModel.addAutor(argv.nombres, argv.apellidos, argv.nacionalidad)
+    const autor = models.autorModel.addAutor(
+      argv.nombres,
+      argv.apellidos,
+      argv.nacionalidad)
     if (autor) {
       console.log(autor)
     }
@@ -29,10 +33,10 @@ const addAutor={
 
 const updateAutor={
   command: 'updateAutor',
-  describe: 'Update an autor nacionalidad',
+  describe: 'Actualiza la nacionalidad de un autor',
   builder: {
     nombres: {
-      describe: 'Nombre del autor',
+      describe: 'Nombres del autor',
       demandOption: true,
       type: 'string'
     },
@@ -48,7 +52,10 @@ const updateAutor={
     }
   },
   handler(argv) {
-    const autor = models.autorModel.updateAutor(argv.nombres, argv.apellidos, argv.nacionalidad)
+    const autor = models.autorModel.updateAutor(
+      argv.nombres,
+      argv.apellidos,
+      argv.nacionalidad)
     if (autor) {
       console.log(autor)
     }
@@ -57,10 +64,10 @@ const updateAutor={
 
 const removeAutor={
   command: 'removeAutor',
-  describe: 'Remove an autor',
+  describe: 'Remueve un autor',
   builder: {
     nombres: {
-      describe: 'Nombre del autor',
+      describe: 'Nombres del autor',
       demandOption: true,
       type: 'string'
     },
@@ -71,7 +78,9 @@ const removeAutor={
     }
   },
   handler(argv) {
-    models.autorModel.removeAutor(argv.nombres, argv.apellidos)
+    models.autorModel.removeAutor(
+      argv.nombres,
+      argv.apellidos)
   }
 }
 

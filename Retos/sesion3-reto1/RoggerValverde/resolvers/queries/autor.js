@@ -2,7 +2,7 @@ const models = require('../../models')
 
 const listAutores={
   command: 'listAutores',
-  describe: 'List your autores',
+  describe: 'Listar todos los autores',
   handler() {
     const autores = models.autorModel.listAutores()
     autores.forEach((autor) => {
@@ -13,7 +13,7 @@ const listAutores={
 
 const readAutor={
   command: 'readAutor',
-  describe: 'Read an autor',
+  describe: 'Mostrar un autor',
   builder: {
     nombres: {
       describe: 'Nombre del autor',
@@ -27,7 +27,9 @@ const readAutor={
     }
   },
   handler(argv) {
-    const autor = models.autorModel.readAutor(argv.nombres, argv.apellidos)
+    const autor = models.autorModel.readAutor(
+      argv.nombres,
+      argv.apellidos)
     if (autor) {
       console.log(autor)
     }
@@ -36,7 +38,7 @@ const readAutor={
 
 const getAutorByID={
   command: 'getAutorByID',
-  describe: 'Get an autor by ID',
+  describe: 'Obtener autor por su ID',
   builder: {
     id: {
       describe: 'ID del autor',

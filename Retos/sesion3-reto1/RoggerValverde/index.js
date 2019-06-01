@@ -1,14 +1,22 @@
 const yargs = require('yargs')
-const models = require('./models')
-const chalk = require('chalk')
 
 //Mutations
 const autorMutations = require('./resolvers/mutations/autor')
 const albumMutations = require('./resolvers/mutations/album')
+const cancionMutations = require('./resolvers/mutations/cancion')
+const usuarioMutations = require('./resolvers/mutations/usuario')
+const cancionEscuchadaMutations = require('./resolvers/mutations/cancionEscuchada')
+const listaReproduccionMutations = require('./resolvers/mutations/listaReproduccion')
+const cancionListaReproduccionMutations = require('./resolvers/mutations/cancionListaReproduccion')
 
 //Queries
 const autorQueries = require('./resolvers/queries/autor')
 const albumQueries = require('./resolvers/queries/album')
+const cancionQueries = require('./resolvers/queries/cancion')
+const usuarioQueries = require('./resolvers/queries/usuario')
+const cancionEscuchadaQueries = require('./resolvers/queries/cancionEscuchada')
+const listaReproduccionQueries = require('./resolvers/queries/listaReproduccion')
+const cancionListaReproduccionQueries = require('./resolvers/queries/cancionListaReproduccion')
 
 // Customize yargs version
 //yargs.version('1.1.0')
@@ -32,54 +40,45 @@ yargs.command(albumQueries.readAlbum)
 yargs.command(albumQueries.getAlbumByID)
 
 //Cancion
-yargs.command({
-  command: 'addCancion',
-  desc: 'Add a new cancion',
-  builder: {
-    nombre: {
-      describe: 'Nombre de la cancion',
-      demandOption: true,
-      type: 'string'
-    },
-    nombresAutor: {
-      describe: 'Nombres del autor de la cancion',
-      demandOption: true,
-      type: 'string'
-    },
-    apellidosAutor: {
-      describe: 'Apellidos del autor de la cancion',
-      demandOption: true,
-      type: 'string'
-    },
-    nombreAlbum: {
-      describe: 'Nombre del album de la cancion',
-      demandOption: true,
-      type: 'string'
-    },
-    duracion: {
-      describe: 'Duración de la cancion',
-      type: 'integer'
-    },
-    genero: {
-      describe: 'Genero de la cancion',
-      type: 'string'
-    }
-  },
-  handler(argv) {
-    const cancion = models.cancionModel.addCancion(
-      argv.nombre,
-      argv.nombresAutor,
-      argv.apellidosAutor,
-      argv.nombreAlbum,
-      argv.duracion,
-      argv.genero)
-    if (cancion) {
-      //console.log(chalk.green.inverse('New album added!'))
-      console.log(cancion)
-    }/*else {
-      console.log(chalk.red.inverse('Album already in!'))
-    }*/
-  }
-})
+yargs.command(cancionMutations.addCancion)
+yargs.command(cancionMutations.updateCancion)
+yargs.command(cancionMutations.removeCancion)
+
+yargs.command(cancionQueries.listCanciones)
+yargs.command(cancionQueries.readCancion)
+yargs.command(cancionQueries.getCancionByID)
+
+//Usuario
+yargs.command(usuarioMutations.addUsuario)
+yargs.command(usuarioMutations.updateUsuario)
+yargs.command(usuarioMutations.removeUsuario)
+
+yargs.command(usuarioQueries.listUsuarios)
+yargs.command(usuarioQueries.readUsuario)
+yargs.command(usuarioQueries.getUsuarioByID)
+
+//Cancion Escuchada
+yargs.command(cancionEscuchadaMutations.addCancionEscuchada)
+yargs.command(cancionEscuchadaMutations.removeCancionEscuchada)
+
+yargs.command(cancionEscuchadaQueries.listCancionesEscuchadas)
+yargs.command(cancionEscuchadaQueries.readCancionEscuchada)
+yargs.command(cancionEscuchadaQueries.getCancionEscuchadaByID)
+
+//Lista de Reproduccion
+yargs.command(listaReproduccionMutations.addListaReproduccion)
+yargs.command(listaReproduccionMutations.removeListaReproduccion)
+
+yargs.command(listaReproduccionQueries.listListasReproduccion)
+yargs.command(listaReproduccionQueries.readListaReproduccion)
+yargs.command(listaReproduccionQueries.getListaReproduccionByID)
+
+//Cancion de Lista de Reproduccion
+yargs.command(cancionListaReproduccionMutations.addCancionListaReproduccion)
+yargs.command(cancionListaReproduccionMutations.removeCancionListaReproduccion)
+
+yargs.command(cancionListaReproduccionQueries.listCancionesListaReproduccion)
+yargs.command(cancionListaReproduccionQueries.readCancionListaReproduccion)
+yargs.command(cancionListaReproduccionQueries.getCancionListaReproduccionByID)
 
 yargs.parse()

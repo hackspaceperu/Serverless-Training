@@ -100,7 +100,7 @@ class CancionEscuchada {
     }    
   }
 
-  listCancionEscuchadaes(){
+  listCancionesEscuchadas(){
     const cancionesEscuchadas = utils.loadJson(this.file)
     
     console.log(chalk.inverse('Your cancionesEscuchadas'))

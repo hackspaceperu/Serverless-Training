@@ -47,9 +47,9 @@ class ListaReproduccion {
     }    
   }
 
-  updateListaReproduccion(nombre, correoUsuario){
+  /*updateListaReproduccion(nombre, correoUsuario){
     const listasReproduccion = utils.loadJson(this.file)
-    const usuario=this.usuarioModel.readUsuario(nombresUsuario,apellidosUsuario)
+    const usuario=this.usuarioModel.readUsuario(correoUsuario)
     if(usuario){
       //console.log(usuario)
       const id=crc32.buf(
@@ -69,7 +69,7 @@ class ListaReproduccion {
       }
     }
     return
-  }
+  }*/
   
   removeListaReproduccion(nombre, correoUsuario){
     const listasReproduccion = utils.loadJson(this.file)

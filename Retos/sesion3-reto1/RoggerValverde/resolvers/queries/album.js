@@ -2,7 +2,7 @@ const models = require('../../models')
 
 const listAlbumes={
   command: 'listAlbumes',
-  describe: 'List your albumes',
+  describe: 'Listar todos los albumes',
   handler() {
     const albumes = models.albumModel.listAlbumes()
     albumes.forEach((album) => {
@@ -13,7 +13,7 @@ const listAlbumes={
 
 const readAlbum={
   command: 'readAlbum',
-  describe: 'Read an album',
+  describe: 'Mostrar un album',
   builder: {
     nombre: {
       describe: 'Nombre del album',
@@ -32,7 +32,10 @@ const readAlbum={
     }
   },
   handler(argv) {
-    const autor = models.autorModel.readAutor(argv.nombre,argv.nombresAutor, argv.apellidosAutor)
+    const autor = models.autorModel.readAutor(
+      argv.nombre,
+      argv.nombresAutor,
+      argv.apellidosAutor)
     if (autor) {
       console.log(autor)
     }
@@ -41,7 +44,7 @@ const readAlbum={
 
 const getAlbumByID={
   command: 'getAlbumByID',
-  describe: 'Get an album by ID',
+  describe: 'Obtener album por su ID',
   builder: {
     id: {
       describe: 'ID del album',
@@ -50,7 +53,8 @@ const getAlbumByID={
     }
   },
   handler(argv) {
-    const album = models.albumModel.getAlbumByID(argv.id)
+    const album = models.albumModel.getAlbumByID(
+      argv.id)
     if (album) {
       console.log(album)
     }
