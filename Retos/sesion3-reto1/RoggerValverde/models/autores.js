@@ -21,16 +21,19 @@ class Autor {
     const duplicateAutor = autores.find((autor) => autor.id === id)
 
     if (!duplicateAutor) {
-      autores.push({
+      const autor={
         id,
         nombres,
         apellidos,
         nacionalidad
-      })
+      }
+      autores.push(autor)
       utils.saveJson(autores,this.file)
-        console.log(chalk.green.inverse('New autor added!'))
+      console.log(chalk.green.inverse('New autor added!'))
+      return autor
     }else {
-        console.log(chalk.red.inverse('Autor already in!'))
+      console.log(chalk.red.inverse('Autor already in!'))
+      return
     }
   }
 
@@ -45,9 +48,11 @@ class Autor {
     if (index>-1) {
       autores[index].nacionalidad=nacionalidad
       utils.saveJson(autores,this.file)
-        console.log(chalk.green.inverse('Autor updated!'))
+      console.log(chalk.green.inverse('Autor updated!'))
+      return autores[index]
     }else {
-        console.log(chalk.red.inverse('Autor not found!'))
+      console.log(chalk.red.inverse('Autor not found!'))
+      return
     }
   }
   
@@ -72,9 +77,10 @@ class Autor {
     
     console.log(chalk.inverse('Your autores'))
 
-    autores.forEach((autor) => {
+    return autores
+    /*autores.forEach((autor) => {
         console.log(autor)
-    })
+    })*/
   }
 
   readAutor(nombres, apellidos){
@@ -87,10 +93,10 @@ class Autor {
     const autor = autores.find((autor) => autor.id === id)
 
     if (autor) {
-        //console.log(chalk.inverse(autor))
-        console.log(autor)
+      return autor
     } else {
-        console.log(chalk.red.inverse('Autor not found!'))
+      console.log(chalk.red.inverse('Autor not found!'))
+      return
     }
   }
 }
