@@ -34,3 +34,4 @@ print(filtered([1,2,3,2,7,8,-3],4))
 print(filtered([1,2,4,2,7,8,-3],4))
 print(filtered([1,2,4,2,7,8,-3],8))
 print(filtered( [4, 6, 2, -6, 10],8))
+print(filtered( [1,1,1,8,7,9,0,2],9)) // arreglar -> [[1,8] [7,2] [9,0]]
