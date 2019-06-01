@@ -8,7 +8,8 @@ class Autor {
 	// 		this.apellidos = apellidos;
 	// 		this.nacionalidad = nacionalidad;
   // }
-  constructor(file) {
+  constructor(crcNum,file) {
+    this.crcNum = crcNum
     this.file = file
   }
 
@@ -17,7 +18,7 @@ class Autor {
     const id=crc32.buf(
       nombres//.toString()
       + apellidos//.toString()
-      , 997)
+      , this.crcNum)
     const duplicateAutor = autores.find((autor) => autor.id === id)
 
     if (!duplicateAutor) {
@@ -42,7 +43,7 @@ class Autor {
     const id=crc32.buf(
       nombres//.toString()
       + apellidos//.toString()
-      , 997)
+      , this.crcNum)
     const index = autores.findIndex((autor) => autor.id === id)
 
     if (index>-1) {
@@ -61,7 +62,7 @@ class Autor {
     const id=crc32.buf(
       nombres//.toString()
       + apellidos//.toString()
-      , 997)
+      , this.crcNum)
     const autoresToKeep = autores.filter((autor) => autor.id !== id)
 
     if (autores.length > autoresToKeep.length) {
@@ -88,7 +89,7 @@ class Autor {
     const id=crc32.buf(
       nombres//.toString()
       + apellidos//.toString()
-      , 997)
+      , this.crcNum)
     
     const autor = autores.find((autor) => autor.id === id)
 
@@ -97,6 +98,19 @@ class Autor {
     } else {
       console.log(chalk.red.inverse('Autor not found!'))
       return
+    }
+  }
+
+  getAutorByID(id){
+    const autores = utils.loadJson(this.file)
+    const autor = autores.find((autor) => autor.id === id)
+    if (autor) {
+        //console.log(chalk.inverse(album))
+        return autor
+        //console.log(album)
+    } else {
+        console.log(chalk.red.inverse('Autor not found!'))
+        return
     }
   }
 }

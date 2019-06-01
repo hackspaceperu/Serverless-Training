@@ -9,7 +9,8 @@ class Album {
 	// 		this.apellidos = apellidos;
 	// 		this.nacionalidad = nacionalidad;
   // }
-  constructor(file,autorModel) {
+  constructor(crcNum,file,autorModel) {
+    this.crcNum = crcNum
     this.file = file
     this.autorModel = autorModel
   }
@@ -22,7 +23,7 @@ class Album {
       const id=crc32.buf(
         nombre//.toString()
         + autor.id.toString()
-        , 997)
+        , this.crcNum)
 
       const duplicateAlbum = albumes.find((album) => album.id === id)
       
@@ -55,7 +56,7 @@ class Album {
       const id=crc32.buf(
         nombre//.toString()
         + autor.id.toString()
-        , 997)
+        , this.crcNum)
         
       const index = albumes.findIndex((album) => album.id === id)
       if (index>-1) {
@@ -76,11 +77,11 @@ class Album {
     const autor=crc32.buf(
       nombresAutor//.toString()
       + apellidosAutor//.toString()
-      , 997)
+      , this.crcNum)
     const id=crc32.buf(
       nombre//.toString()
       + autor.toString()
-      , 997)
+      , this.crcNum)
     const albumesToKeep = albumes.filter((album) => album.id !== id)
 
     if (albumes.length > albumesToKeep.length) {
@@ -107,14 +108,27 @@ class Album {
     const autor=crc32.buf(
       nombresAutor//.toString()
       + apellidosAutor//.toString()
-      , 997)
+      , this.crcNum)
     const id=crc32.buf(
       nombre//.toString()
       + autor.toString()
-      , 997)
+      , this.crcNum)
     
     const album = albumes.find((album) => album.id === id)
 
+    if (album) {
+        //console.log(chalk.inverse(album))
+        return album
+        //console.log(album)
+    } else {
+        console.log(chalk.red.inverse('Album not found!'))
+        return
+    }
+  }
+
+  getAlbumByID(id){
+    const albumes = utils.loadJson(this.file)
+    const album = albumes.find((album) => album.id === id)
     if (album) {
         //console.log(chalk.inverse(album))
         return album
