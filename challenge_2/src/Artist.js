@@ -1,6 +1,6 @@
-import {Entity} from './Entity'
+const Entity =require('./Entity')
 
-export class Artist extends Entity{
+module.exports=class Artist extends Entity{
     constructor({id,dni,name,email}){
         super({id})
         this.name=name
