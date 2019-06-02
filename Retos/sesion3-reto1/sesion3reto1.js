@@ -7,14 +7,13 @@
  * JS Modules
  *
  * Objetivo del Reto: Crear estructuras de datos con sus respectivos CRUD para simular un backend de Spotify o Netflix.
- *
  * La cantidad y complejidad de las estructuras de datos es libre.
  *
  * */
 
 // Codigo Referencia
 
-class Autor {
+class Artista {
     constructor(nombre, pais) {
         this.nombre = nombre;
         this.pais = pais;
@@ -22,10 +21,10 @@ class Autor {
 }
 
 class Cancion {
-    constructor(titulo, duracion, autor) {
+    constructor(titulo, duracion, artista) {
         this.titulo = titulo;
         this.duracion = duracion;
-        this.autor = new Autor(autor.nombre, autor.pais);
+        this.artista = new Artista(artista.nombre, artista.pais);
     }
 }
 
@@ -42,8 +41,8 @@ function Spotify () {
         init: function () {
             SpotifyDB = new db([]);
         },
-        agregarCancion: function (titulo, duracion, autor) {
-            SpotifyDB.canciones.push(new Cancion(titulo, duracion, autor));
+        agregarCancion: function (titulo, duracion, artista) {
+            SpotifyDB.canciones.push(new Cancion(titulo, duracion, artista));
         }
     }
 }
@@ -52,6 +51,7 @@ let spotifyInstance = Spotify();
 
 spotifyInstance.init();
 
+// Agregando Canciones
 spotifyInstance.agregarCancion('cancion uno', 4.3, {nombre: 'tanto', pais: 'tanto'});
 spotifyInstance.agregarCancion('cancion dos', 4.3, {nombre: 'tanto', pais: 'tanto'});
 
