@@ -23,7 +23,7 @@ const saveDB = ()=>{
     })
 }
 
-const create = (argv)=>{
+const create = argv=>{
     loadingDB()
     let entity = factoryEntity.buildEntity(argv)
     if(argv._[0]==='create_artist') db.artists.push(entity)
@@ -34,19 +34,25 @@ const create = (argv)=>{
 }
 // loadingDB()
 // create(yargs)
-const toListOf=(argv)=>{
+const toListOf=argv=>{
     loadingDB()
     if(argv._[0]==='to_list_artists') return print(db.artists)
     if(argv._[0]==='to_list_songs') return print(db.songs)
     if(argv._[0]==='to_list_albums') return print(db.albums)
     if(argv._[0]==='to_list_gs') return print(db.musical_genres)
 }
-
+const showById = argv =>{
+    loadingDB()
+    if(argv._[0]==='show_artist_by_id') return print(db.artists.filter(art=>art.id===argv.id))
+    if(argv._[0]==='show_song_by_id') return print(db.songs.filter(s=>s.id===argv.id))
+    if(argv._[0]==='show_album_by_id') return print(db.albums.filter(al=>al.id===argv.id))
+    if(argv._[0]==='show_genre_by_id') return print(db.musical_genres.filter(m=>m.id===argv.id))
+}
 // let e = f.buildEntity(yargs)
 // db.artists.push(e)
 // db.artists.push(e)
 
 // console.log(db.artists)
-toListOf(yargs)
-// print(db)
+// toListOf(yargs)
+showById(yargs)
 
