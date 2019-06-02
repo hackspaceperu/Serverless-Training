@@ -10,6 +10,10 @@ class Netflix {
     this.movieModel.create(movie)
   }
 
+  deleteMovieByTitle(title) {
+    this.movieModel.deleteByField('title', title)
+  }
+
   listMovies() {
     return this.movieModel.findAll()
   }
@@ -18,8 +22,12 @@ class Netflix {
     this.serieModel.create(serie)
   }
 
+  deleteSerieByTitle(title) {
+    this.serieModel.deleteByField('title', title)
+  }
+
   listSeries() {
-    this.serieModel.findAll()
+    return this.serieModel.findAll()
   }
 }
 
