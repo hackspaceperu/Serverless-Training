@@ -1,14 +1,16 @@
 const fs = require('fs'),
     colors = require('colors'),
     {yargs} = require('../config/yargs'),
-    factory = require('./FactoryEntity'),
-    pathDB ='./database/spotifyDB.json'
+    FactoryEntity = require('./FactoryEntity'),
+    pathDB ='./database/spotifyDB.json',
+    factoryEntity = new FactoryEntity(),
+    print = console.log
 let db = {}
 const loadingDB = ()=>{
     try{
         db = require(pathDB)
     }catch{
-        db = {}
+        db = {"artists":[],"albums":[],"songs":[],"musical_genres":[]}
     }
 }
 const saveDB = ()=>{
@@ -21,18 +23,30 @@ const saveDB = ()=>{
     })
 }
 
-loadingDB()
-let f = new factory()
-let e = f.buildEntity(yargs)
-db.artists.push(e)
-db.artists.push(e)
-saveDB().then(console.log).catch(console.error)
-console.log(db.artists)
+const create = (argv)=>{
+    loadingDB()
+    let entity = factoryEntity.buildEntity(argv)
+    if(argv._[0]==='create_artist') db.artists.push(entity)
+    if(argv._[0]==='create_musical_genre') db.musical_genres.push(entity)
+    if(argv._[0]==='create_album') db.albums.push(entity)
+    if(argv._[0]==='create_song') db.songs.push(entity)
+    saveDB().then(data=>print(entity)).catch(console.error)
+}
+// loadingDB()
+// create(yargs)
+const toListOf=(argv)=>{
+    loadingDB()
+    if(argv._[0]==='to_list_artists') return print(db.artists)
+    if(argv._[0]==='to_list_songs') return print(db.songs)
+    if(argv._[0]==='to_list_albums') return print(db.albums)
+    if(argv._[0]==='to_list_gs') return print(db.musical_genres)
+}
 
+// let e = f.buildEntity(yargs)
+// db.artists.push(e)
+// db.artists.push(e)
 
+// console.log(db.artists)
+toListOf(yargs)
+// print(db)
 
-
-// const create = (argv)=>{
-//     loadingDB()
-
-// }
