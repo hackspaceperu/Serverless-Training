@@ -12,7 +12,7 @@ const addCancionEscuchada={
     idCancion: {
       describe: 'ID de la cancion de la cancion escuchada',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     },
     fecha: {
       describe: 'Fecha de la cancion escuchada',
@@ -43,7 +43,7 @@ const removeCancionEscuchada={
     idCancion: {
       describe: 'ID de la cancion de la cancion escuchada',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     },
     fecha: {
       describe: 'Fecha de la cancion escuchada',

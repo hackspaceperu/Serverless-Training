@@ -7,12 +7,12 @@ const addCancionListaReproduccion={
     idListaReproduccion: {
       describe: 'ID de la lista de reproduccion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     },
     idCancion: {
       describe: 'ID de la cancion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     }
   },
   handler(argv) {
@@ -32,12 +32,12 @@ const removeCancionListaReproduccion={
     idListaReproduccion: {
       describe: 'ID de la lista de reproduccion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     },
     idCancion: {
       describe: 'ID de la cancion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     }
   },
   handler(argv) {

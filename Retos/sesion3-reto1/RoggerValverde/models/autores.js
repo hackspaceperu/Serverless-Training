@@ -3,11 +3,6 @@ const crc32 = require('crc-32')
 const chalk = require('chalk')
 
 class Autor {
-	// constructor(nombres, apellidos, nacionalidad) {
-	// 		this.nombres = nombres;
-	// 		this.apellidos = apellidos;
-	// 		this.nacionalidad = nacionalidad;
-  // }
   constructor(crcNum,file) {
     this.crcNum = crcNum
     this.file = file
@@ -76,7 +71,7 @@ class Autor {
   listAutores(){
     const autores = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your autores'))
+    console.log(chalk.inverse('Tus autores'))
 
     return autores
     /*autores.forEach((autor) => {

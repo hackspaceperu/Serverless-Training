@@ -3,7 +3,7 @@ const crc32 = require('crc-32')
 const chalk = require('chalk')
 // const models = require('./index')
 
-class CancionListaResproduccion {
+class CancionListaReproduccion {
 	// constructor(nombres, apellidos, nacionalidad) {
 	// 		this.nombres = nombres;
 	// 		this.apellidos = apellidos;
@@ -16,7 +16,7 @@ class CancionListaResproduccion {
     this.cancionModel = cancionModel
   }
 
-  addCancionListaResproduccion(idListaReproduccion,idCancion){
+  addCancionListaReproduccion(idListaReproduccion,idCancion){
     const cancionesListaReproduccion = utils.loadJson(this.file)
     const listaReproduccion=this.listaReproduccionModel.getListaReproduccionByID(idListaReproduccion)
     const cancion=this.cancionModel.getCancionByID(idCancion)
@@ -28,9 +28,9 @@ class CancionListaResproduccion {
         + cancion.id.toString()
         , this.crcNum)
 
-      const duplicateCancionListaResproduccion = cancionesListaReproduccion.find((cancionListaReproduccion) => cancionListaReproduccion.id === id)
+      const duplicateCancionListaReproduccion = cancionesListaReproduccion.find((cancionListaReproduccion) => cancionListaReproduccion.id === id)
       
-      if (!duplicateCancionListaResproduccion) {
+      if (!duplicateCancionListaReproduccion) {
         const cancionListaReproduccion={
           id,
           listaReproduccion:listaReproduccion.id,
@@ -41,7 +41,7 @@ class CancionListaResproduccion {
         console.log(chalk.green.inverse('New cancionListaReproduccion added!'))
         return cancionListaReproduccion
       }else {
-        console.log(chalk.red.inverse('CancionListaResproduccion already in!'))
+        console.log(chalk.red.inverse('CancionListaReproduccion already in!'))
         return 
       }
     }else{
@@ -50,7 +50,7 @@ class CancionListaResproduccion {
     }    
   }
 
-  // updateCancionListaResproduccion(idListaReproduccion, idCancion){
+  // updateCancionListaReproduccion(idListaReproduccion, idCancion){
   //   const cancionListaReproduccion = utils.loadJson(this.file)
   //   const listaReproduccion=this.listaReproduccionModel.getListaResproduccionByID(idListaReproduccion)
   //   const cancion=this.cancionModel.getCancionByID(idCancion)
@@ -67,36 +67,36 @@ class CancionListaResproduccion {
   //       cancionListaReproduccion[index].duracion=duracion
   //       cancionListaReproduccion[index].genero=genero
   //       utils.saveJson(cancionListaReproduccion,this.file)
-  //       console.log(chalk.green.inverse('CancionListaResproduccion updated!'))
+  //       console.log(chalk.green.inverse('CancionListaReproduccion updated!'))
   //       return cancionListaReproduccion[index]
   //     }else {
-  //       console.log(chalk.red.inverse('CancionListaResproduccion not found!'))
+  //       console.log(chalk.red.inverse('CancionListaReproduccion not found!'))
   //       return
   //     }
   //   }
   //   return
   // }
   
-  removeCancionListaResproduccion(idListaReproduccion, idCancion){
+  removeCancionListaReproduccion(idListaReproduccion, idCancion){
     const cancionesListaReproduccion = utils.loadJson(this.file)
     const id=crc32.buf(
       idListaReproduccion.toString()
       + idCancion.toString()
       , this.crcNum)
-    const cancionListaReproduccionToKeep = cancionesListaReproduccion.filter((cancionListaReproduccion) => cancionListaReproduccion.id !== id)
+    const cancionesListaReproduccionToKeep = cancionesListaReproduccion.filter((cancionListaReproduccion) => cancionListaReproduccion.id !== id)
 
-    if (cancionesListaReproduccion.length > cancionListaReproduccionToKeep.length) {
-        console.log(chalk.green.inverse('CancionListaResproduccion removed!'))
+    if (cancionesListaReproduccion.length > cancionesListaReproduccionToKeep.length) {
+        console.log(chalk.green.inverse('CancionListaReproduccion removed!'))
         utils.saveJson(cancionesListaReproduccionToKeep,this.file)
     } else {
         console.log(chalk.red.inverse('No cancionListaReproduccion found!'))
     }    
   }
 
-  listCancionesListaResproduccion(){
+  listCancionesListaReproduccion(){
     const cancionesListaReproduccion = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your cancionesListaReproduccion'))
+    console.log(chalk.inverse('Tus canciones de listas de reproduccion'))
 
     return cancionesListaReproduccion
     /*cancionListaReproduccion.forEach((cancionesListaReproduccion) => {
@@ -104,7 +104,7 @@ class CancionListaResproduccion {
     })*/
   }
 
-  readCancionListaResproduccion(idListaReproduccion, idCancion){
+  readCancionListaReproduccion(idListaReproduccion, idCancion){
     const cancionesListaReproduccion = utils.loadJson(this.file)
     const id=crc32.buf(
       idListaReproduccion.toString()
@@ -118,12 +118,12 @@ class CancionListaResproduccion {
         return cancionListaReproduccion
         //console.log(cancionListaReproduccion)
     } else {
-        console.log(chalk.red.inverse('CancionListaResproduccion not found!'))
+        console.log(chalk.red.inverse('CancionListaReproduccion not found!'))
         return
     }
   }
 
-  getCancionListaResproduccionByID(id){
+  getCancionListaReproduccionByID(id){
     const cancionesListaReproduccion = utils.loadJson(this.file)
     const cancionListaReproduccion = cancionesListaReproduccion.find((cancionListaReproduccion) => cancionListaReproduccion.id === id)
     if (cancionListaReproduccion) {
@@ -131,10 +131,10 @@ class CancionListaResproduccion {
         return cancionListaReproduccion
         //console.log(cancion)
     } else {
-        console.log(chalk.red.inverse('CancionListaResproduccion not found!'))
+        console.log(chalk.red.inverse('CancionListaReproduccion not found!'))
         return
     }
   }
 }
 
-module.exports = {CancionListaResproduccion}
+module.exports = {CancionListaReproduccion}

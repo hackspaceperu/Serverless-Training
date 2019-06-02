@@ -37,12 +37,12 @@ const updateUsuario={
   builder: {
     nombres: {
       describe: 'Nombres del usuario',
-      demandOption: true,
+      //demandOption: true,
       type: 'string'
     },
     apellidos: {
       describe: 'Apellidos del usuario',
-      demandOption: true,
+      //demandOption: true,
       type: 'string'
     },
     correo: {

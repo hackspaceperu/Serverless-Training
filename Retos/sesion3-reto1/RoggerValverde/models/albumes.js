@@ -95,7 +95,7 @@ class Album {
   listAlbumes(){
     const albumes = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your albumes'))
+    console.log(chalk.inverse('Tus albumes'))
 
     return albumes
     /*albumes.forEach((album) => {

@@ -93,7 +93,7 @@ class ListaReproduccion {
   listListasReproduccion(){
     const listasReproduccion = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your listasReproduccion'))
+    console.log(chalk.inverse('Tus listas de reproduccion'))
 
     return listasReproduccion
     /*listasReproduccion.forEach((listaReproduccion) => {

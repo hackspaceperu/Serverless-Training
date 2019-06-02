@@ -18,12 +18,12 @@ const readCancionListaReproduccion={
     idListaReproduccion: {
       describe: 'ID de la lista de reproduccion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     },
     idCancion: {
       describe: 'ID de la cancion',
       demandOption: true,
-      type: 'string'
+      type: 'number'
     }
   },
   handler(argv) {

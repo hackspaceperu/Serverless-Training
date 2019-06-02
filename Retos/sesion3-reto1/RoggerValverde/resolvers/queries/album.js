@@ -32,12 +32,12 @@ const readAlbum={
     }
   },
   handler(argv) {
-    const autor = models.autorModel.readAutor(
+    const album = models.albumModel.readAlbum(
       argv.nombre,
       argv.nombresAutor,
       argv.apellidosAutor)
-    if (autor) {
-      console.log(autor)
+    if (album) {
+      console.log(album)
     }
   }
 }

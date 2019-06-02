@@ -20,7 +20,7 @@ class Cancion {
     const canciones = utils.loadJson(this.file)
     const autor=this.autorModel.readAutor(nombresAutor,apellidosAutor)
     const album=this.albumModel.readAlbum(nombreAlbum,nombresAutor,apellidosAutor)
-    
+    console.log(nombre,autor.id,album.id)
     if(autor && album){
       //console.log(autor)
       const id=crc32.buf(
@@ -29,6 +29,7 @@ class Cancion {
         + album.id.toString()
         , this.crcNum)
 
+      console.log(id)
       const duplicateCancion = canciones.find((cancion) => cancion.id === id)
       
       if (!duplicateCancion) {
@@ -110,7 +111,7 @@ class Cancion {
   listCanciones(){
     const canciones = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your canciones'))
+    console.log(chalk.inverse('Tus canciones'))
 
     return canciones
     /*canciones.forEach((cancion) => {

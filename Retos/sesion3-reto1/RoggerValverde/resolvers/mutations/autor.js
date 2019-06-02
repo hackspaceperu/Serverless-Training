@@ -14,7 +14,7 @@ const addAutor={
       demandOption: true,
       type: 'string'
     },
-    correo: {
+    nacionalidad: {
       describe: 'Nacionalidad del autor',
       demandOption: true,
       type: 'string'
@@ -27,6 +27,7 @@ const addAutor={
       argv.nacionalidad)
     if (autor) {
       console.log(autor)
+      //return autor
     }
   }
 }

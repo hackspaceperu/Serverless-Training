@@ -56,7 +56,7 @@ class Usuario {
     }
   }
   
-  removeUsuario(nombres,apellidos){
+  removeUsuario(correo){
     const usuarios = utils.loadJson(this.file)
     const id=crc32.buf(
       correo
@@ -74,7 +74,7 @@ class Usuario {
   listUsuarios(){
     const usuarios = utils.loadJson(this.file)
     
-    console.log(chalk.inverse('Your usuarios'))
+    console.log(chalk.inverse('Tus usuarios'))
 
     return usuarios
     /*usuarios.forEach((usuario) => {
