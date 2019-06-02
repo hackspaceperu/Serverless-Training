@@ -1,0 +1,25 @@
+{
+  "name": "serverless-training",
+  "version": "1.0.0",
+  "description": "practica backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidygerbi/Serverless-Training.git"
+  },
+  "keywords": [
+    "class",
+    "js",
+    "poo",
+    "backend"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heidygerbi/Serverless-Training/issues"
+  },
+  "homepage": "https://github.com/heidygerbi/Serverless-Training#readme"
+}
