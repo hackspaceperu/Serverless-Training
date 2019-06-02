@@ -1,14 +1,20 @@
 //Clase de usuario de spotify
 class User{
-    constructor(name, lastName, email, password,profileImage, subscription){
+    constructor(id,name, lastName, email, password,profileImage, subscription,playlists){
 
-        this.idUser=Math.floor((Math.random() * 10) + 1);
+
+        if(!playlists){
+            playlists=[];
+        }
+
+        this.id=id;
         this.name=name;
         this.lastName=lastName;
         this.email=email;
         this.password=password;
         this.profileImage=profileImage;
-        this.subscription=new Subscription(subscription.type,                   subscription.activationDate,subscription.expirationDate);
+        this.subscription=new Subscription(subscription.type,subscription.activationDate,subscription.expirationDate);
+        this.playlists=playlists;
 
     }
     getName(){
@@ -65,7 +71,7 @@ class PlayList{
     constructor(id,name,songs){
         this.id=id;
         this.name=name;
-        this.songs;
+        this.songs=songs;
     }
 }
 
@@ -112,8 +118,8 @@ function Spotify(){
         init:function(){
             SpotifyDB = new db([],[]);
         },
-        addUser: function(name,lastName,email,password,profileImage, subscription){
-            Users.push(new User(name,lastName,email, password,profileImage, new Subscription(subscription.type, subscription.activationDate,subscription.expirationDate)))
+        addUser: function(id,name,lastName,email,password,profileImage, subscription,playlists){
+            Users.push(new User(id,name,lastName,email, password,profileImage, new Subscription(subscription.type, subscription.activationDate,subscription.expirationDate),playlists))
         },
         addSong: function(id,name, urlMedia, tags){
            Songs.push(new Song(id,name,urlMedia,tags));
@@ -134,6 +140,13 @@ function Spotify(){
             let tempSong = Songs[Songs.findIndex(x => x.id === idSongs)];
             
             Artists[indexArtist].albums[indexAlbum].songs.push(new Song(tempSong.id,tempSong.name,tempSong.urlMedia,tempSong.tags));
+
+
+        },
+        addPlayList:function(idUser,idPlayList,name,songs){
+            let indexUser = Users.findIndex(x=>x.id === idUser);
+           
+            Users[indexUser].playlists.push(new PlayList(idPlayList,name,songs));
 
 
         },
@@ -185,18 +198,24 @@ spotifyInstance.addSong(4,"Te bote","https://www.youtube.com/watch?v=9jI-z9QN6g8
 console.log(Songs);
 //Asocio las canciones a los artistas/albunes
 
-//canciones de Yola
+//canciones de Yola agregadas album
 spotifyInstance.addSongToAlbum(1,1,1);//Se añade la cancion cucaracha/Intantiles/yola
 spotifyInstance.addSongToAlbum(1,1,2);
 
 
 
-//camcipmes de Bad Bunny
+//canciones de Bad Bunny agregadas al album
 spotifyInstance.addSongToAlbum(2,1,3);
 spotifyInstance.addSongToAlbum(2,2,4);
 
 // Un usuario se registra en spotify
-spotifyInstance.addUser("Hugo","Deudor", "hufedebe@gmail.com", "hackspace","https://static.thenounproject.com/png/363633-200.png", new Subscription("free","01/06/19","02/06/19"));
+spotifyInstance.addUser(1,"Hugo","Deudor", "hufedebe@gmail.com", "hackspace","https://static.thenounproject.com/png/363633-200.png", new Subscription("free","01/06/19","02/06/19"),[]);
+
+
+
+//Creamos un playlist para el usuario HUgo
+spotifyInstance.addPlayList(1,1,"Musica para estudiar",[]);
+spotifyInstance.addPlayList(1,2,"Musica para tonear",[]);
 
 
 
