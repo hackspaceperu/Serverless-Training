@@ -195,7 +195,7 @@ spotifyInstance.addSong(3,"Mia","https://www.youtube.com/watch?v=OSUxrSe5GbI", [
 spotifyInstance.addSong(4,"Te bote","https://www.youtube.com/watch?v=9jI-z9QN6g8", ["chill", "reggaeton"]);
 
 
-console.log(Songs);
+//console.log(Songs);
 //Asocio las canciones a los artistas/albunes
 
 //canciones de Yola agregadas album
