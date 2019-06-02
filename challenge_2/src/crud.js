@@ -1,6 +1,4 @@
 const fs = require('fs'),
-    colors = require('colors'),
-    {yargs} = require('../config/yargs'),
     FactoryEntity = require('./FactoryEntity'),
     pathDB ='./database/spotifyDB.json',
     factoryEntity = new FactoryEntity(),
@@ -105,11 +103,12 @@ const deleteById = argv =>{
     }
     saveDB().then(console.log).catch(console.error)
 }
-// let e = f.buildEntity(yargs)
-// db.artists.push(e)
-// db.artists.push(e)
-// create(yargs)
-// deleteById(yargs)
-// console.log(db.artists)
-// toListOf(yargs)
-// showById(yargs)
+
+module.exports = {
+    loadingDB,
+    saveDB,
+    create,
+    toListOf,
+    showById,
+    deleteById
+}
