@@ -37,14 +37,15 @@ const create_album={
     id,
     title:{
         demand:true,
-        alias:'d',
+        alias:'t',
     },
     date:{
         demand:true,
+        alias:'d'
     },
     id_artist:{
         demand:true,
-        alias:'idArt'
+        alias:'a'
     }
 }
 
@@ -52,14 +53,15 @@ const create_song={
     id,
     id_genre:{
         demand:true,
-        alias:'idge'
+        alias:'g'
     },
     id_album:{
         demand:true,
-        alias:'idal'
+        alias:'a'
     },
     date:{
         demand:true,
+        alias:'d'
     },
     title:{
         demand:true,
