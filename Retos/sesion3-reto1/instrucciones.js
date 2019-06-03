@@ -10,50 +10,25 @@
  *
  * La cantidad y complejidad de las estructuras de datos es libre.
  *
- * */
+ */
 
-// Codigo Referencia
+const spotify = require('./bootstrap/app');
+const data = require('./data.json');
 
-class Autor {
-    constructor(nombre, pais) {
-        this.nombre = nombre;
-        this.pais = pais;
-    }
-}
+spotify.createUser('dimacros');
 
-class Cancion {
-    constructor(titulo, duracion, autor) {
-        this.titulo = titulo;
-        this.duracion = duracion;
-        this.autor = new Autor(autor.nombre, autor.pais);
-    }
-}
+data.forEach(song => {
+    spotify.createSong(song);
+});
 
-class db {
-    constructor(canciones) {
-        this.canciones = canciones;
-    }
-}
+const dimacros = spotify.findUserByUsername('dimacros');
 
-let SpotifyDB;
+dimacros.addPlayList('Rock');
+dimacros.addPlayList('Electro');
+dimacros.addPlayList('Salsa');
 
-function Spotify () {
-    return {
-        init: function () {
-            SpotifyDB = new db([]);
-        },
-        agregarCancion: function (titulo, duracion, autor) {
-            SpotifyDB.canciones.push(new Cancion(titulo, duracion, autor));
-        }
-    }
-}
+dimacros.myPlayList('Rock').addSong(
+    spotify.findSongByTitle('Los Malaventurados lo lloran')
+);
 
-let spotifyInstance = Spotify();
-
-spotifyInstance.init();
-
-spotifyInstance.agregarCancion('cancion uno', 4.3, {nombre: 'tanto', pais: 'tanto'});
-spotifyInstance.agregarCancion('cancion dos', 4.3, {nombre: 'tanto', pais: 'tanto'});
-
-
-console.log(SpotifyDB);
+console.log(dimacros);
