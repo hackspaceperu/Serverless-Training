@@ -2,18 +2,14 @@
  * @author Dimacros
  * 
  * Problema:
- * Las parejas de numeros que sumen 8; sin usar un loop.
+ * Las parejas de números que sumen 8; sin usar un loop.
  * 
- * Ejemplo: [4, 6, 2, -6, 10, -2, 0, 8, 4 ...]
+ * Ejemplo: [3, 6, 2, -6, 10, -2, 0, 8, 4, 4]
  * 
- * return [ [ 6, 2 ], [ 10, -2 ], [ 0, 8 ] ]
+ * return [ [ 6, 2 ], [ 10, -2 ], [ 0, 8 ], [4, 4] ]
  */
 
-const numeros = [4, 6, 2, -6, 10, -2, 0, 8, 4];
-
-const app = () => console.log(
-    sumPairsEquals(8, numeros)
-);
+const numbers = [3, 6, 2, -6, 10, -2, 0, 8, 4, 4];
 
 function sumPairsEquals(total, numbers)
 {
@@ -29,10 +25,10 @@ function sumPairsEquals(total, numbers)
         accumulator().push([a, b]);
     }
 
-    return sumPairsEquals(total, movePointer(numbers, 1));
+    return sumPairsEquals(total, reduceLenght(numbers, 1));
 }
 
-function movePointer(numbers, length)
+function reduceLenght(numbers, length)
 {
     return numbers.slice(length);
 }
@@ -46,5 +42,6 @@ function accumulator()
     return accumulator.add;
 }
 
-//Run application
-return app();
+console.log(
+    sumPairsEquals(8, numbers)
+);
