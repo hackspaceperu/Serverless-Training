@@ -4,10 +4,10 @@ const Song = require("../Song");
 
 class SongFactory
 {
-    create({artistData, albumData, title, durationInSeconds})
+    create({artist: { name: artistName}, album: { title: albumTitle}, title, durationInSeconds})
     {
-        const artist = new Artist(artistData);
-        const album = new Album(albumData);
+        const artist = new Artist(artistName);
+        const album = new Album(albumTitle);
         
         return new Song(artist, album, title, durationInSeconds);
     }
