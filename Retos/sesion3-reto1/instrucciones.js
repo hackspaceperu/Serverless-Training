@@ -31,4 +31,14 @@ dimacros.myPlayList('Rock').addSong(
     spotify.findSongByTitle('Los Malaventurados lo lloran')
 );
 
-console.log(dimacros);
+dimacros.myPlayList('Rock').addSong(
+    spotify.findSongByTitle('Borracho en el bar')
+);
+
+dimacros.myPlayList('Rock').addSong(
+    spotify.findSongByTitle('Sentimiento Fatal')
+);
+
+console.log(
+    dimacros.myPlayList('Rock')
+);
