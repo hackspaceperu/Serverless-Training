@@ -73,12 +73,16 @@ const user = new User("rrondon","1234","rrondon@gmail.com","Raul Rondon Ponce");
 const user_premium = new User("jperez","1234","jperez@gmail.com","Juan Perez");
 
 const spotify = new Spotify([album],[user,user_premium]);
-let album1 = spotify.getAlbum("Como mirarte");
-spotify.addUser(user_premium);
+//let album1 = spotify.getAlbum("Como mirarte");
+
+spotify.addAlbum(album);
+spotify.addAlbum(album3);
 spotify.addUser(user_premium);
 
-console.log(album1);
 
 console.log(spotify);
 
-//console.log(album);
+spotify.deleteAlbum(album.name);
+spotify.deleteUser(user_premium.username);
+spotify.deleteUser(user.username);
+console.log(spotify);

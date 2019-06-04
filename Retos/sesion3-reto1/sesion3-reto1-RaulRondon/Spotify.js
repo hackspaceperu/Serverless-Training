@@ -8,16 +8,24 @@ module.exports = class Spotify {
             this.album.push(newAlbum);
     }
     getAlbum(albumName) {
-        return this.album.find(elemento => elemento.name === albumName) || null;
+        return this.album.find(element => element.name === albumName) || null;
     }
-    deleteAlbum(album) {
-        let index = this.album.indexOf(album);
-        if(this.album.indexOf(album) !== -1)
-            this.album.splice(index,1);
+    deleteAlbum(albumName) {
+        let album = this.getAlbum(albumName);
+        if(album!==null)
+            this.album.splice(this.album.indexOf(album),1);
     }
     addUser(newUser) {
         let exist = this.user.find(elemento=>elemento.username === newUser.username);
         if(!exist)
             this.user.push(newUser);
+    }
+    getUser(username) {
+        return this.user.find(element => element.username === username) || null;
+    }
+    deleteUser(username) {
+        let user  = this.getUser(username);
+        if(user!==null)
+            this.user.splice(this.user.indexOf(user),1);
     }
 };
