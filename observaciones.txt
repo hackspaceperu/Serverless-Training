@@ -1,0 +1,10 @@
+serverless => Framework que implementa la arquitectura serverless
+practicar los metodos mas utilizado en los arrays
+que es el hoisting en JS
+que es el clousure en JS
+
+#recursos
+http://superherojs.com/
+http://eloquentjavascript.net/2nd_edition/
+http://hectorip.github.io/Eloquent-JavaScript-ES-online/
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
