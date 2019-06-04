@@ -1,6 +1,6 @@
 Definiciones importantes
 """"""""""""""""""""""""
-DevOps => Es un intermediario encargado de gestionar las operaciones del servidor y las implementaciones. (investigar un poco más)
+DevOps => Es un intermediario encargado de gestionar las operaciones del servidor y las implementaciones.
 
 VPS "Virtual Private Server" => Es un servidor virtual a través de un proveedor, facil de escalar (memoria, CPU, disco). El inconveniente es que al haber un control total 
 
@@ -8,13 +8,4 @@ IAAS "Infraestructura as a service" => Es una versión moderna de VPS
 
 PAAS "Platform as as services" => Nos brinda la plataforma (solo esto) como por ejemplo APP Engine de Google
 
-Serverless " " => Es un nuevo PAAS (AWS lo utiliza como funciones lambda y Google como Google Functions). Puedes actualizar rapidamente ciertas funciones de código de la aplicación.
-
-
-
-#Observaciones
-Actualizar las definiciones vistas hasta el momento.
-serverless.com => es un framework  vital para el curso hay que estudiarlo
-
-#Temas del reto
-crear un branch y despues hacer un pull request
+Serverless => Es un nuevo PAAS (AWS lo utiliza como funciones lambda y Google como Google Functions). Puedes actualizar rapidamente ciertas funciones de código de la aplicación.

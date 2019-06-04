@@ -1,42 +1,30 @@
+let a = [];
 
-//encontrar las parejas que sumen 8 ejemplo [6, 2]
-//utilizar funciones recursivas - no loops (while, for)
+let comparacion = "11" == "11";
 
-//enviar la solución a través de gist - indicar nombre y correo
-//plazo - hasta un minuto antes de iniciar la clase
+console.log(comparacion);
 
-//const numeros = [4, 6, 2, -6, 10];
-//const numeros = [-4, 6, 12, 2, 4];
-const numeros = [-4, 3, 5, 4, 1, 4, 2, 7, 9, 4, 8, 0];
+console.log(typeof a);
 
-let medidaArr = numeros.length - 1;
+class cancion {
 
-//función que valida si dos números suman 8. De darse el caso devuelve TRUE
-function evaluaPar (n1, n2) {
-    return (n1 + n2) == 8 ? true : false;
+    constructor(titulo, duracion, autor) {
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.autor = autor;
+    }
 }
 
-//función que realiza el recorrido del array
-function recorreArr (valArrIzq, valArrDer) {
+let nuevaCancion = new cancion('cancion uno', 6, 'autor uno');
 
-    let resultado = `El número ${numeros[valArrIzq]} - "posición ${valArrIzq}" y el número ${numeros[valArrDer]}  - "posición ${valArrDer}" suman 8`;
+console.log(nuevaCancion);
 
-    if(valArrIzq == (medidaArr - 1) && valArrDer == medidaArr) {
-        return evaluaPar(numeros[valArrIzq], numeros[valArrDer]) ? console.log(resultado) : "Array finalizado";
+class db {
+    constructor(canciones) {
+        this.canciones = canciones;
     }
+}
 
-    if(valArrDer == medidaArr) {
-        if(evaluaPar(numeros[valArrIzq], numeros[valArrDer])) console.log(resultado);
-        valArrIzq += 1;
-        valArrDer = valArrIzq + 1 ;
-        return recorreArr(valArrIzq, valArrDer);
-    }
+let SpotifyDB = new db([]);
 
-    if(evaluaPar(numeros[valArrIzq], numeros[valArrDer])) console.log(resultado);
-    valArrDer ++;
-
-    return recorreArr (valArrIzq, valArrDer);
-};
-
-
-recorreArr(0,1);
+SpotifyDB.canciones.push(new Cancion)

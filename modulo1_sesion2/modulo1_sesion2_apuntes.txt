@@ -1,25 +1,6 @@
-js es no tipado (no se define el tipo de la variable)
+Apuntes
+"""""""
 
-Tareas. 
+Javascript es no tipado (no se define el tipo de la variable)
 
-como antiguamente se podria realizar lo que realiza el spread operator. (recorriendo con un for)
-
-los arrays tienen bastantes métodos, find(), filter(), forEach(), reduce() hay que poner ejemplos e investigar cada una de estas funciones y otras mas que ayan.
-
-que es el hoisting en JS - declarar una función despues de haberla usado
-
-que es el clousure en JS - 
-
-QUE ES UNA IFI - es una función que se llama a si mismo y despues muere. principalmente utilizada cuando se manejaba todo en solo archivo y se queria crear un scope temporal. 
-
-#recursos
-http://superherojs.com/
-http://eloquentjavascript.net/2nd_edition/
-http://hectorip.github.io/Eloquent-JavaScript-ES-online/
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
-
-#clase jueves
-operaciones asincronas
-promesas
-
-#
+IFI es una función que se llama a si mismo y despues muere. Principalmente utilizada cuando se manejaba todo en solo archivo y se queria crear un scope temporal. 
