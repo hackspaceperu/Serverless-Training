@@ -1,0 +1,9 @@
+Proyección
+
+Dominio de Javascript ES6.
+Dominio de NodeJs.
+Conocimiento de patrones de diseño de software.
+Experiencia en el uso e implementación de Frameworks como: Express, Serverless.
+Experiencia en el uso y consumo de las apis de Amazon Web Service o Google Cloud.
+Experiencia en el desarrollo de servicios de comunicación e interacción de datos.
+Experiencia en el desarrollo servicios backend para procesamiento y análisis de datos y archivos.

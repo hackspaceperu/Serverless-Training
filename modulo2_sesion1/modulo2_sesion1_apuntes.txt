@@ -1,0 +1,2 @@
+npm init => utilizado para generar un archivo llamado "package.json" el cual tendra la información generar sobre nuestros módulos.
+

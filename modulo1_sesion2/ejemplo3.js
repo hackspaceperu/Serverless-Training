@@ -2,8 +2,8 @@
 //encontrar las parejas que sumen 8 ejemplo [6, 2]
 //utilizar funciones recursivas - no loops (while, for)
 
-//Nombre - Diego Damián
-//Correo: diegoaarondv@gmail.com
+//enviar la solución a través de gist - indicar nombre y correo
+//plazo - hasta un minuto antes de iniciar la clase
 
 //const numeros = [4, 6, 2, -6, 10];
 //const numeros = [-4, 6, 12, 2, 4];

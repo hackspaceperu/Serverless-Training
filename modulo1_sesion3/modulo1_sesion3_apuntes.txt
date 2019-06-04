@@ -1,0 +1,41 @@
+
+investigar
+- weird parts javascript
+
+objetivo: que tanta complejidad pueden darle a un programa que ustedes mismso estan controlando.
+
+base: es una aplicación como spotify
+
+crear estructuras de datos, las que deseamos. mientras más mejor y con el mayor nivel de detalle posible.
+
+canción, autor, usuarios, historia
+discografías, albunes
+
+
+modulos, inyección de dependencias => temas a implementar. 
+
+es como un backend interno para spotify
+
+se puede utilizar varios archivos
+
+debe tener un CRUD
+
+debe tener métodos como agregar discografía aparte del CRUD
+
+usar modulos, varios archivos
+
+CREAR UN BACKEND DE SPOTIFY CON SUS ESTRUCTURAS DE DATOS
+SE CALIFICA COMPLEJIDAD
+-TODO SON FUNCIONES Y PROPIEDADES
+
+BUSCAR REFERENCIAS DE ESTRUCTURAS DE DATOS EN JS ASI COMO FACTORY PATTERN
+
+sesion-3-reto-diegoaarondv  --nomenclatura para el trabajo
+
+Factory PatternClasses ES6ModulosImport ES6 - Weird Parts
+
+consultas a contacto@hackspace.pe
+
+
+
+
