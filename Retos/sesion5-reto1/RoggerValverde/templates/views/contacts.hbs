@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Contactos</title>
+    <link rel="icon" href="/img/bee.png">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+
+        <ul class="contactos_list">
+          {{#each contactos}}
+          <li>{{this.nombre}}:{{this.telefono}}</li>
+          {{/each}}
+        </ul>
+    </div>
+
+    {{>footer}}
+
+</body>
+
+</html>

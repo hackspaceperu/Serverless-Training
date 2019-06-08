@@ -1,0 +1,17 @@
+[
+  {
+    "id":1,
+    "nombre": "Rogger Valverde",
+    "telefono": "949989175"
+  },
+  {
+    "id":2,
+    "nombre": "Jorge Bustamante",
+    "telefono": "948944185"
+  },
+  {
+    "id":3,
+    "nombre": "Roberto Chavez",
+    "telefono": "996344122"
+  }
+]
