@@ -7,6 +7,7 @@ const express = require('express'),
 
 app.set('port',process.env.PORT || 8000)
 app.use(express.json()) // lo que hace este middleware es parsear los request llegados desde usuario y convertirlos en JSON
-app.use('/user',user)
+app.use(express.urlencoded({ extended: true }))
+app.use('/users',user)
 
 app.listen(app.get('port'),()=>console.log(`Escuchando en el  puerto ${app.get('port')}`))

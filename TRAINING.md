@@ -37,3 +37,17 @@ En el siguiente ejemplo, el handler se ejecutará para las solicitudes a “/sec
 
 [Referencias](https://expressjs.com/es/api.html)<br>
 [Referencias](https://expressjs.com/es/guide/routing.html)
+
+
+````javascript
+    
+    /**
+     * /api/v1/
+     * /api/v1/contacts
+     * /api/v1/contacts/624
+     * /api/v1/contacts?search=gustavo -- 
+     * /api/v1/contacts?&limit=10&page=2
+     * 
+    */
+
+````
