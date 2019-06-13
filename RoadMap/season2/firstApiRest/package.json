@@ -1,0 +1,20 @@
+{
+  "name": "firstapirest",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "restify": "nodemon --exec 'node -r dotenv/config' index.js"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.4.4",
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/register": "^7.4.4",
+    "dotenv": "^8.0.0",
+    "restify": "^8.3.3",
+    "restify-cors-middleware": "^1.1.1",
+    "restify-router": "^0.5.1",
+    "signale": "^1.4.0"
+  }
+}

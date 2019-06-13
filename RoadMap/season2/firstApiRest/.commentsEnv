@@ -1,0 +1,35 @@
+# puerto de la app
+
+PORT_REST='7000'
+# conexiones a la db
+DB_HOST
+DB_NAME
+DB_USER
+DB_PASSWORD
+DB_DBNAME
+
+AURORA DB
+PEM='asdasdasdxcas,mdna,smn213,m12n3123o1i2j3123@!#!@#!@#!--rsa..a1231'
+
+# depende del tipo de proyecto
+# PEM - encriptada y firmada
+
+ssh-keygen -> id_rsa para conectar su github con su computadora
+
+
+# id & secrets de servicios
+
+
+
+## RECAPITULAR
+developer => .env
+config -> connect -> DB
+SQL => SQLITE, MYSQL, POSTGRES, N thing
+USO DE SERVICIOS A NIVEL DESPLIEGUE EN PROD->
+
+Nivel de costos: Aurora DB -> AWS -> 60% SQL 
+
+.env.local
+.env.prod
+
+dev stage1 stage2 .... LTS ->  
