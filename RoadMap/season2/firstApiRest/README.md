@@ -3,6 +3,19 @@
 3. Setup environments - check
 4. Setup Restify
 5. Define Structure
+6. Create Exceptions - check
+7. Create Responses - check
+8. Create Endpoint Test - check
+------>
+21:13 - 21:23 --> 
+9. Repasar Restify y Estructuracion de Carpetas - check
+10. Crear conexiones a backing services - check
+11. Anatomia de las conexiones - check
+12. Repaso de microservicios (quedo pendiente ayer)
+13. Repaso de estructuras y formas de implementar algunas ideas que tengamos por alli (middleware easy)
+14. Definir Modelo de datos basico (avanzado lo veremos el lunes despues de la prueba)
+15. Obtener Data y Enviar data a MongoDB
+16. Task : Enviar SMS
 
 # DEV DEMO PROD , cualquier stage ==> paridad
 stages == ENV configuraciones
