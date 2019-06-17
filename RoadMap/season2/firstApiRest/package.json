@@ -13,9 +13,13 @@
     "@babel/register": "^7.4.4",
     "aws-sdk": "^2.475.0",
     "dotenv": "^8.0.0",
+    "mongoose": "^5.6.0",
     "restify": "^8.3.3",
     "restify-cors-middleware": "^1.1.1",
     "restify-router": "^0.5.1",
     "signale": "^1.4.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }

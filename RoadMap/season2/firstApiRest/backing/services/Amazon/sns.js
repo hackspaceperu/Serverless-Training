@@ -28,16 +28,14 @@ const sendSMS = async (Message, PhoneNumber) => {
 };
 
 const sendNotifications = async (arrUsers) => {
-  const data = arrUsers.map(({firstName, lastName, mobilePhone})=>{
+  const data = arrUsers.map(async({firstName, lastName, phoneNumber})=>{
     const Message = `${firstName} ${lastName}`
-    let results = await sendSMS(Message, mobilePhone)
+    let results = await sendSMS(Message, phoneNumber)
     return results
   })
   let response = Promise.all(data)
   return response
 }
-
-
 
 export {
   sendSMS,
