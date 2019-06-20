@@ -2,12 +2,12 @@ if (!global._babelPolyfill) {
    require('babel-polyfill');
 }
 
-const p = () => new Promise((resolve, reject)=> resolve({message: 'Primer mensaje'}))
+const p = () => new Promise((resolve, reject)=> resolve({message: 'Segundo mensaje'}))
 
 export const hello = async(event, context, cb) => {
-  try {
+  try{
     return await p()
-  } catch (error) {
+  }catch(error){
     return error
   }
 };

@@ -1,6 +1,7 @@
 import restify from 'restify'
 import Notifications from './server/Routes/Notifications'
 import Users from './server/Routes/Users'
+//import axios from 'axios'
 
 const signale = require('signale')
 
@@ -33,6 +34,22 @@ router.applyRoutes(server)
 server.get('/', (req, res)=>{
   res.json({ date: Date.now(), service: process.env.APPLICATION, version: 'v1' })
 })
+
+/*server.get('/gg', async (req, res)=>{
+  axios.get('http://localhost:3000/first')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+  res.json({ service: process.env.APPLICATION, version: 'v1' })
+})*/
 
 server.listen(process.env.PORT_REST, ()=>{
   signale.success(`[Hackspace] Server ready at ${process.env.PORT_REST}`)

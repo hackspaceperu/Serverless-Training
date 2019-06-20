@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "restify": "nodemon --exec 'node -r dotenv/config' index.js"
+    "restify": "nodemon --exec node -r dotenv/config index.js"
   },
   "dependencies": {
     "@babel/cli": "^7.4.4",
@@ -12,6 +12,7 @@
     "@babel/preset-env": "^7.4.5",
     "@babel/register": "^7.4.4",
     "aws-sdk": "^2.475.0",
+    "axios": "^0.19.0",
     "dotenv": "^8.0.0",
     "mongoose": "^5.6.0",
     "restify": "^8.3.3",

@@ -1,0 +1,1 @@
+export { NotFoundException } from './NotFound'
