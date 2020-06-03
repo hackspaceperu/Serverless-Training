@@ -1,0 +1,176 @@
+//Daniel Zapata
+//jdanielzr@gmail.com
+class db {
+    constructor(album,suscriptor,autor,cancion) {
+        this.album = album;
+        this.suscriptor = suscriptor;
+        this.autor = autor;
+        this.cancion = cancion;
+
+
+
+
+    }
+
+
+}
+
+class Suscriptor {
+    constructor(nombres, apellidos,email,pais,contrasena) {
+        this.nombres = nombres;
+        this.apellidos = apellidos;
+        this.email = email;
+        this.pais = pais;
+        this.contrasena = contrasena;
+
+    }
+}
+
+class Autor {
+    constructor(nombre, pais) {
+        this.nombre = nombre;
+        this.pais = pais;
+    }
+}
+
+class Cancion {
+    constructor(titulo, duracion, autor) {
+        this.titulo = titulo;
+        this.duracion = duracion;
+        this.autor = new Autor(autor.nombre, autor.pais);
+    }
+}
+
+class Album {
+    constructor(titulo, canciones, anio) {
+        this.titulo = titulo;
+        this.anio = anio;
+        this.canciones=canciones;
+
+     }
+
+
+}
+
+
+let SpotifyDB;
+
+
+function Spotify () {
+    return {
+        init: function () {
+            SpotifyDB = new db([],[],[],[]);
+        },
+        nuevaSuscripcion: function (suscriptor) {
+        let mensaje;
+            if(SpotifyDB.suscriptor.length==0){
+                SpotifyDB.suscriptor.push(new Suscriptor(suscriptor.nombres, suscriptor.apellidos, suscriptor.email,suscriptor.pais,suscriptor.contrasena));
+                mensaje= `Se registro correctamente correo ${suscriptor.email}`;
+            }else{
+                let c=0;
+                SpotifyDB.suscriptor.forEach(function(suscripto){
+
+                    if(c===0) {
+                        if (suscripto.email.toString().toUpperCase() === suscriptor.email.toString().toUpperCase()) {
+                            mensaje = `Ya existe un usuario con este correo ${suscriptor.email}`;
+                            c++;
+                        } else {
+                            SpotifyDB.suscriptor.push(new Suscriptor(suscriptor.nombres, suscriptor.apellidos, suscriptor.email, suscriptor.pais));
+                            mensaje = `Se registro correctamente correo ${suscriptor.email}`;
+                        }
+                    }
+
+
+                });
+            }
+
+                return mensaje;
+        },
+        iniciarSesion: function (email,contrasena) {
+
+            let mensaje;
+
+
+            let login = SpotifyDB.suscriptor.filter(login => login.email ===email && login.contrasena ===contrasena );
+            if(login.length===0) {
+                mensaje = "Error al iniciar sesión";
+            }else{
+                mensaje = `Bienvenido ${login[0].nombres}`;
+            }
+             return mensaje;
+
+            },
+
+        agregaralbum: function (album) {
+            SpotifyDB.album.push(album);
+         },
+        buscarCancion: function (query) {
+            let resultado=[];
+            SpotifyDB.album.forEach(function(album){
+               let detalle=album.canciones;
+                detalle.forEach(function(cancion){
+                    let r=cancion.titulo.toUpperCase().indexOf(query.toUpperCase());
+                     if(r!=-1)
+                    resultado.push(cancion)
+                })
+            });
+
+
+
+        return resultado;
+
+
+
+        }
+
+
+    }
+}
+
+
+let spotifyInstance = Spotify();
+
+spotifyInstance.init();
+
+let autor1=new Autor("Pedro Suarez","Perú");
+let cancion1=new Cancion("Degeneración actual","5:14",autor1);
+let cancion2=new Cancion("Déjame vivir","4:42",autor1);
+let cancion3=new Cancion("Tren sexual","4:08",autor1);
+let cancion4=new Cancion("El secreto en tu mente","5:17",autor1);
+
+let cancion5=new Cancion("Mi auto era una rana","5:14",autor1);
+let cancion6=new Cancion("El árbol","4:42",autor1);
+let cancion7=new Cancion("Podré cambiar","4:08",autor1);
+let cancion8=new Cancion("La niña bella","5:17",autor1);
+
+let cancion9=new Cancion("Me siento mejor","5:14",autor1);
+let cancion10=new Cancion("Un vino, dame una cerveza","4:42",autor1);
+let cancion11=new Cancion("Me estoy enamorando","4:08",autor1);
+let cancion12=new Cancion("Mi auto era una rana","5:17",autor1);
+
+let cancion13=new Cancion("Me elevé","5:14",autor1);
+let cancion14=new Cancion("Cuando el sol va a salir","4:42",autor1);
+let cancion15=new Cancion("Sé que todo ha acabado ya","4:08",autor1);
+let cancion16=new Cancion("Tren Sexual","5:17",autor1);
+
+let coleccion1 = new Album("Degeneración actual",[cancion1,cancion2,cancion3,cancion4]);
+let coleccion2 = new Album("(No existen) Técnicas para olvidar",[cancion5,cancion6,cancion7,cancion8]);
+let coleccion3 = new Album("Póntelo en la lengua",[cancion9,cancion10,cancion11,cancion12]);
+let coleccion4 = new Album("Talk Show",[cancion13,cancion14,cancion15,cancion16]);
+
+console.log(spotifyInstance.nuevaSuscripcion({nombres: 'Daniel', apellidos: 'Zapata',email: 'jdanielzr@gmail.com', contrasena: '123456', pais: 'PERU'}));
+console.log(spotifyInstance.nuevaSuscripcion({nombres: 'Ariana', apellidos: 'Zapata',email: 'ariana@gmail.com', contrasena: 'qwerty', pais: 'PERU'}));
+console.log(spotifyInstance.nuevaSuscripcion({nombres: 'Juan', apellidos: 'Herrera',email: 'juan@gmail.com', contrasena: '1q2w3e', pais: 'PERU'}));
+console.log(spotifyInstance.nuevaSuscripcion({nombres: 'Daniel', apellidos: 'Impostor',email: 'jdanielzr@gmail.com', contrasena: 'PERU', pais: 'PERU'}));
+
+
+console.log(spotifyInstance.iniciarSesion("jdanielzr@gmail.com", "sdad"));
+
+console.log(spotifyInstance.iniciarSesion("jdanielzr@gmail.com", "123456"));
+
+
+spotifyInstance.agregaralbum(coleccion1);
+spotifyInstance.agregaralbum(coleccion2);
+spotifyInstance.agregaralbum(coleccion3);
+spotifyInstance.agregaralbum(coleccion4);
+console.log(spotifyInstance.buscarCancion("tren"));
