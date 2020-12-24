@@ -1,0 +1,52 @@
+[
+    {
+        "artist": {
+            "name": "PXNDX"
+        },
+        "album": {
+            "title": "-"
+        },
+        "title": "Los Malaventurados lo lloran",
+        "durationInSeconds": 300
+    },
+    {
+        "artist": {
+            "name": "Tragokorto"
+        },
+        "album": {
+            "title": "¿A dónde vas?"
+        },
+        "title": "Borracho en el bar",
+        "durationInSeconds": 300
+    },
+    {
+        "artist": {
+            "name": "Los Violadores"
+        },
+        "album": {
+            "title": "-"
+        },
+        "title": "Sentimiento Fatal",
+        "durationInSeconds": 300
+    },
+    {
+        "artist": {
+            "name": ""
+        },
+        "album": {
+            "title": ""
+        },
+        "title": "",
+        "durationInSeconds": 300
+    },
+    {
+        "artist": {
+            "name": ""
+        },
+        "album": {
+            "title": ""
+        },
+        "title": "",
+        "durationInSeconds": 300
+    }
+]
